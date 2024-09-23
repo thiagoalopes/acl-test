@@ -1,16 +1,12 @@
 export const actions = {
     // Autenticação automática
     async authenticateUser({ commit }) {
-      let token = localStorage.getItem('token'); // Verificar se há token armazenado
+      let token = localStorage.getItem('access_token'); // Verificar se há token armazenado
 
       if (!token) {
         // Se não houver token, realizar chamada Axios para o serviço de autenticação
         try {
-          const response = await axios.post('https://seuservico.com/autenticacao', {
-            username: 'username',
-            password: 'password'
-          });
-          token = response.data.token; // Obter o token da resposta
+          
           commit('setToken', token); // Salvar o token no Vuex e localStorage
         } catch (error) {
           console.error('Erro ao obter token:', error);
