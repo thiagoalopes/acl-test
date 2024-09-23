@@ -1,12 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import { Home } from "../components/home.vue";
-import { Permissao1 } from "../components/permissao1.vue";
-import { Permissao2 } from "../components/permissao2.vue";
-import { Permissao3 } from "../components/permissao3.vue";
-import { Permissao3 } from "../components/permissao3.vue";
-import { NotAllowed } from "../components/notAllowed.vue";
-import { store } from './store'; // Importando o store para verificar autenticação
+import Home from "../components/home.vue";
+import Permissao1 from "../components/permissao1.vue";
+import Permissao2 from "../components/permissao2.vue";
+import Permissao3 from "../components/permissao3.vue";
+import NotAllowed from "../components/notAllowed.vue";
+import { store } from '../store/store'; // Importando o store para verificar autenticação
 
 
 export const router = createRouter({ 

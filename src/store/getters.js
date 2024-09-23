@@ -1,4 +1,4 @@
-export const mutations = {
+export const getters = {
     userCanRead(state) {
         return state.userPermissions.canRead;
     },

@@ -1,7 +1,9 @@
+import { jwtDecode } from "jwt-decode";
+
 export const actions = {
     // Autenticação automática
     async authenticateUser({ commit }) {
-      let token = localStorage.getItem('access_token'); // Verificar se há token armazenado
+      let token = localStorage.getItem('token'); // Verificar se há token armazenado
 
       if (!token) {
         // Se não houver token, realizar chamada Axios para o serviço de autenticação
@@ -16,6 +18,7 @@ export const actions = {
 
       // Decodificar o token para obter perfis e permissões
       const decodedToken = jwtDecode(token);
+
       const profiles = decodedToken.profiles || []; // Perfis do usuário
 
       commit('setAuthentication', true);
